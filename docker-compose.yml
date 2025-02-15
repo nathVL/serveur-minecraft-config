@@ -1,0 +1,19 @@
+services:
+  minecraft:
+    image: marctv/minecraft-papermc-server:1.21.1
+    restart: unless-stopped
+    container_name: "minecraft-server"
+    environment:
+      MEMORYSIZE: "5G"
+      PAPERMC_FLAGS: ""
+    volumes:
+      - /home/nathan/paper-mc/data/world:/data/world
+      - /home/nathan/paper-mc/data/world_nether:/data/world_nether
+      - /home/nathan/paper-mc/data/world_the_end:/data/world_the_end
+      - /home/nathan/paper-mc/data/worldold:/data/worldold
+      - /home/nathan/paper-mc/data/server.properties:/data/server.properties
+      - /home/nathan/paper-mc/data/config:/data/config
+    ports:
+      - "25565:25565"
+    stdin_open: true
+    tty: true
