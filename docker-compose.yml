@@ -4,7 +4,6 @@ services:
     restart: unless-stopped
     container_name: "minecraft-server"
     environment:
-      MEMORYSIZE: "5G"
       PAPERMC_FLAGS: ""
     volumes:
       - /home/nathan/paper-mc/data/world:/data/world
